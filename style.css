@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: blueviolet;
+}
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.clock {
+  width: 200px;
+  aspect-ratio: 1;
+  position: relative;
+  margin: 20px 0;
+  border: 7px solid #c999ff;
+  box-shadow: inset 10px 10px 20px rgb(0 0 0 / 20%),
+    12px 10px 20px rgb(0 0 0 / 10%);
+  border-radius: 50%;
+}
+.needle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #333;
+  width: 5px;
+  height: 70px;
+  transform-origin: bottom center;
+  border-radius: 10px;
+  z-index: -10;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+.needle.minutes {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 90px;
+}
+.needle.seconds {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 90px;
+  background: #d8002e;
+  transition: all 1s linear;
+}
+
+.center {
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center::before {
+  width: 5px;
+  content: "";
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #c999ff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.time {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 20px;
+  color: #fff;
+}
+.day {
+  color: #fff;
+}
